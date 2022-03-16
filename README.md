@@ -1,7 +1,7 @@
 # Email cleanup web service
 Simple web service aimed to clean up a body of an email message from unnecessary footers and further chatter.
 
-To start:
+Build from enclosed Dockerfile. Start:
 ````
 docker run -p 3000:3000 talon
 ````
