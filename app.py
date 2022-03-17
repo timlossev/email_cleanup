@@ -14,7 +14,10 @@ def health_check():
 @app.route('/', methods=['POST'])
 def process_message():
     reply = quotations.extract_from(request.data.decode('utf-8'), request.content_type)
-    return jsonify({'response': reply})
+    if (request.headers['accept'] == 'application/json'):
+        return jsonify({'response': reply})
+    else:
+        return reply
 
 from waitress import serve
 serve(app, host="0.0.0.0", port=3000)
